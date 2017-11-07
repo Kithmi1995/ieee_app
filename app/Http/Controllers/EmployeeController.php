@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class EmployeeController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['create']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -44,10 +54,14 @@ class EmployeeController extends Controller
 
           $employee->save();
 
-          return "Successfully Saved your file";
+          $employee = Employee::where('user_id', auth()->user()->id)->first();
+
+          return view('auth.emp_home', ['msg' => 'Successfully saved your CV', 'employee' => $employee, 'type'=>2]);
         }
         else{
-            return "No file was uploaded";
+            $employee = Employee::where('user_id', auth()->user()->id)->first();
+
+            return view('auth.emp_home', ['msg' => "Couldn't save your CV.", 'employee' => $employee, 'type'=>2]);
         }
     }
 

@@ -14,11 +14,30 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Welcome to IEEE Sri Lanka Section Career Fair 2017!
                         <br>
 
                     @if(auth()->user()->type == 2)
+
+                        @if(isset($msg))
+                            <strong>{{ $msg }}</strong>
+
+                        @endif
+
+                        @if(isset($employee))
+                            @if(!empty($employee->cv))
+                                    <a target="_blank" href="/storage/{{ substr($employee->cv, 7) }}">
+                                        {{ $employee->user->first_name }} {{ $employee->user->middle_name }} {{ $employee->user->last_name }}
+                                    </a>
+                            @endif
+                        @endif
+
+
                             <form action="{{ route('employee.store') }}" method="POST" enctype="multipart/form-data">
+                                <h3>Upload CV</h3>
+
+
+
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-md-6 col-md-offset-6">
@@ -31,9 +50,11 @@
                             </form>
 
                     @elseif(auth()->user()->type == 1)
-                        @if(isset($employees))
+                        @if(count($employees))
                             @foreach($employees as $employee)
-                                    <a target="_blank" href="/storage/{{ substr($employee->cv, 7) }}">{{ $employee->name }}</a>
+                                    <a target="_blank" href="/storage/{{ substr($employee->cv, 7) }}">
+                                        {{ $employee->user->first_name }} {{ $employee->user->middle_name }} {{ $employee->user->last_name }}
+                                    </a>
                             @endforeach
                         @endif
 

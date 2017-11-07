@@ -29,7 +29,7 @@
 						<p style="text-align: center">In order to be registered with the IEEE Career Fair'17 you should be a IEEE member and must have a IEEE Mail. Provide the followig details with your IEEE mail (exclude the <i>@ieee.org</i> part and wait for confirmation mail to continue.</p>
 					</div> -->
 					<button type="submit" id="register-button" style="width: 300px;">Register</button>
-					<p style="margin-top: 10px;">Already registered? <a href="login.php " style="color: white;">Login</a> Here!</p>
+					<p style="margin-top: 10px;">Already registered? <a href="/login " style="color: white;">Login</a> Here!</p>
 				</form>
 			</div>
 			

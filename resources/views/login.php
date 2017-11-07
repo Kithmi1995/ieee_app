@@ -2,7 +2,7 @@
   <html>
     <head>
     	<!-- Login CSS -->
-    	<link rel="stylesheet" type="text/css" href="./assests/css/login.css">
+    	<link rel="stylesheet" type="text/css" href="/assests/css/login.css">
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -13,10 +13,10 @@
 				<h3>IEEE Career Fair '17</h3>
 				
 				<form class="form" method="POST" action="index.php">
-					<input type="text" name="username" placeholder="Username" id="username"required="required">
+					<input type="text" name="username" placeholder="Email" id="username"required="required">
 					<input type="password" name="password" placeholder="Password" id="password" required="required">
 					<button type="" id="login-button">Login</button>
-					<p style="margin-top: 10px;">Not registered? <a href="register.php" style="color: white;">Register</a> Now!</p>
+					<p style="margin-top: 10px;">Not registered? <a href="/register" style="color: white;">Register</a> Now!</p>
 				</form>
 			</div>
 			

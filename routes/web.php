@@ -21,3 +21,7 @@ Route::resource('/employee', 'EmployeeController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/confirm_mail', 'HomeController@confirm');
+
+Route::get('/confirm_mail/{code}', 'HomeController@confirm_mail');

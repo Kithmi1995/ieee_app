@@ -10,4 +10,8 @@ class Company extends Model
 
     protected $table = 'company';
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
 }
