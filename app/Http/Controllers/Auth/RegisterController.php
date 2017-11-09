@@ -103,15 +103,15 @@ class RegisterController extends Controller
             $employee->save();
         }
 
-
+/*
         try{
             Mail::to($user->email)->send(new ConfirmSignup($user));
         }
         catch (\Exception $exception){
             return $user;
         }
-
-//        Mail::to($user->email)->send(new ConfirmSignup($user));
+*/
+        Mail::to($user->email)->send(new ConfirmSignup($user));
 
 
         return $user;
